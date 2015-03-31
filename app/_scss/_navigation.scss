@@ -1,0 +1,35 @@
+.nav--main {
+	ul {
+		list-style-type: none;
+		text-align: center;
+		margin:1em 0;
+		padding: 0 0;
+	}
+
+	li {
+		display: inline-block;
+		margin:0 0;
+		padding: 0 0;
+		> a {
+
+		}
+	
+		&.navrow__brand {
+			> a {
+				@include hide-text();
+				background-image: url('../img/logo.jpg');
+				background-repeat: no-repeat;
+				background-position: center center;
+				background-size: 100% auto;
+				display: inline-block;
+				height:7.666em;
+				width:20em;
+				//background-color: red;
+			}
+		}
+
+	}
+}
+
+
+

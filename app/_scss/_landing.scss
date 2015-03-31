@@ -1,0 +1,207 @@
+.hero {
+	padding:2em 0 4em;
+}
+
+
+.hero__text {
+	text-align: left;
+	max-width: 35em;
+	h1 {
+		font-family: $sans-serif;
+		font-weight: 300;
+		font-size: 2em;
+	}
+
+}
+
+.content--dark {
+	background-color: $pridark;
+	color:$prilight;
+	padding:4em 0;
+}
+
+
+.content--penges {
+	background-image: url('../img/cirada.png');
+	background-repeat: no-repeat;
+	background-position: right top;
+	background-size: 33.333% auto;
+	text-align: center;
+
+	.content__title {
+		@include hide-text();
+		background-image: url('../img/logo_simple.svg');
+		background-repeat: no-repeat;
+		background-position: center center;
+		background-size: 100% auto;
+		display: inline-block;
+		height:1.125em;
+		width:14em;
+		//background-color: red;
+	}
+}
+
+.tricky {
+	text-align: center;
+	.wrapper {
+		padding-top: 4em;
+		padding-bottom: 4em;
+		max-width: 24em;
+		@include bp($s2) {
+			max-width: $normalmax;
+		}
+	}
+}
+
+.tricky__title {
+	@include hide-text();
+	background-image: url('../img/logo_text.jpg');
+	background-repeat: no-repeat;
+	background-position: center center;
+	background-size: 100% auto;
+	display: block;
+	height:4em;
+	width:11em;
+	//background-color: red;
+	margin:0 auto;
+	@include bp($s2) {
+		margin:-2em 0 0;
+		display: inline-block;
+		width:33.333%;
+		position: absolute;
+		top:50%;
+		left:50%;
+		transform:translateY(-50%) translateX(-50%);
+	}
+	@include bp($s3) {
+		height:4em;
+		width:11em;
+	}
+}
+
+.tricky__left {
+	float:left;
+	width:50%;
+	@include bp($s2) {
+		width:33.333%;
+	}
+}
+
+.tricky__right {
+	float:right;
+	width:50%;
+	@include bp($s2) {
+		width:33.333%;
+	}
+}
+.tricky__elem {
+	text-align: center;
+	font-family: $sans-serif;
+	margin:3em 0;
+}
+
+.tricky__elem__title {
+	font-size: 1.333em;
+	line-height: 1;
+	font-weight: 900;
+	margin:0;
+	padding:.333em 1.5em .25em;
+	border-top: 1px solid $pridark;
+	border-bottom: 1px solid $pridark;
+	display: inline-block;
+	position: relative;
+	&:before {
+		z-index:-1;
+		position: absolute;
+		content:'';
+		display: block;
+		left:3px;
+		right:3px;
+		top:-3px;
+		bottom:-3px;
+		//background-color: red;
+		border-top: 1px solid $pridark;
+		border-bottom: 1px solid $pridark;
+
+	}
+}
+
+.tricky__elem__list {
+	font-weight: 300;
+	list-style-type: none;
+	margin:.666em 0 .25em;
+	padding:0;
+	li {
+		font-size: .875em;
+	}
+}
+
+.tricky__elem__min{
+	font-weight: 300;
+	font-size: .75em;
+	line-height: 1;
+}
+
+.persons {
+	background-color: $pridark;
+	color:$prilight;
+}
+
+.persons__streetview {
+	@include bp($s2) {
+		width:60%;
+		float:left;
+	}
+	
+	img {
+		display: block;
+	}
+}
+.persons__members {
+	@include clearfix();
+	padding:0 1em;
+	text-align: center;
+	@include bp($s2) {
+		width:40%;
+		float:left;
+		max-width: $s1;
+	}
+
+}
+
+.member {
+	margin:3em 0;
+	font-family: $sans-serif;
+	font-weight: 300;
+
+	a {
+		color:inherit;
+		&:hover, &:focus {
+			color:$highlight;
+		}
+	}
+
+}
+
+.member__name {
+	font-family: $sans-serif;
+	font-weight: 300;
+	display: block;
+	font-size: 1.25em;
+	font-weight: 900;
+	line-height: 1;
+}
+.member__title {
+	display: block;
+	font-size: .75em;
+	line-height: 1;
+}
+
+.member__tel {
+	display: block;
+	margin-top: .75em;
+}
+
+.member__email {
+	display: block;
+}

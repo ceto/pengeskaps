@@ -1,0 +1,44 @@
+/*****************
+ Color Definitions
+ *****************/
+
+
+/* White */
+$white: #fff; 
+$prilight: #ECEDE8; //main text color 
+$seclight: #EFF0EA;
+
+
+/* Black */
+$black: #000;
+$pridark:#353331; // main background and dark text
+
+
+
+/* Orange */
+$highlight:#F37C4B; // buttons
+
+
+
+/*********************
+ Breakpoints and width
+ *********************/
+
+$s0: 320px;
+$s1: 480px;
+$s2: 768px;
+$s3: 1024px;
+$s4: 1280px;
+$s5: 1600px;
+
+$narrowmax: 890px;
+$normalmax: 1140px;
+$widemax: 1360px;
+
+
+/****************
+	Fonts
+**************/
+$serif: 'MinionPro', serif;
+$sans-serif: 'DINNextLTPro', sans-serif;	
+

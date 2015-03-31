@@ -1,0 +1,92 @@
+*, *:before, *:after {
+  box-sizing: border-box;
+}
+
+img {
+  max-width: 100%;
+  height:auto;
+}
+
+html {
+	overflow-y: auto;
+	min-height: 100%;
+	text-size-adjust: 100%;
+	-moz-osx-font-smoothing: grayscale;
+	-webkit-font-smoothing: antialiased;
+	text-rendering: optimizeLegibility;
+}
+
+body {
+	overflow-x:hidden;
+	background-color: $white;
+	color:$pridark;
+	font-family: $serif;
+	font-size: 16px;
+	line-height: 1.25;
+	@include bp($s3){
+		font-size: 18px;
+	}
+	@include bp($s5){
+		font-size: 20px;
+	}
+}
+
+
+a {
+	text-decoration: none;
+}
+
+.wrapper {
+	@include clearfix();
+	position: relative;
+	margin:0 auto;
+	padding:0 0.5em;
+	max-width: $normalmax;
+	@include bp($s2) {
+		padding:0 1em;
+	}
+	@include bp($s4) {
+		padding:0 2em;
+	}
+}
+
+.wrapper--fullwidth {
+	padding:0 0;
+	max-width: none;
+	@include bp($s2) {
+		padding:0 0;
+	}
+	@include bp($s4) {
+		padding:0 0;
+	}
+}
+.wrapper--wide {
+	max-width: $widemax;
+}
+.wrapper--narrow {
+	max-width: 40em;
+	@include bp($s3) {
+		max-width: $narrowmax;
+	}
+}
+
+hr {
+	border:none;
+	height:2px;
+	background-color: $white;
+}
+
+.btn {
+	display: inline-block;
+	padding:.5em 1.25em .333em;
+	font-family: $sans-serif;
+	font-weight: 900;
+	font-size: 1.5em;
+	background-color: $highlight;
+	color:$seclight;
+	text-decoration: none;
+	&:hover, &:focus {
+		background-color: $pridark;
+		color:$prilight;
+	}
+}
