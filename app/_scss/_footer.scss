@@ -1,6 +1,62 @@
+.pagefooter__brands {
+	padding:2em 0 2em 0;
+
+	.wrapper {
+	}
+	
+	hr {
+		margin-bottom: 2em;
+		display: none;
+	}
+	
+}
+.fbrand {
+	width:30%;
+	display: block;
+	float:left;
+	padding:4% 5% 0 5%;
+
+	&.fbrand--pf {
+		padding-top:0;
+		width:40%;
+	}
+
+}
+
 .pagefooter__bottom {
   text-align: center;
   background-color: $pridark;
   color:$prilight;
-  padding:2em 0;
+  padding:3em 0 2em 0;
+
+  a {
+  	color:inherit;
+  	&:hover, &:focus {
+  		color:$highlight;
+  	}
+  }
+}
+
+.pagefooter__tothetop {
+	font-family: $sans-serif;
+	font-weight: 300;
+	display: inline-block;
+	position: relative;
+	padding-top: .5em;
+	&:before {
+		position: absolute;
+		top:-1.2em;
+		left:0;
+		right: 0;
+		content:'〈';
+		transform:rotate(90deg);
+	}
+	&:after {
+		position: absolute;
+		top:-1em;
+		left:0;
+		right: 0;
+		content:'〈';
+		transform:rotate(90deg);
+	}
 }

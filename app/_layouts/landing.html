@@ -2,7 +2,7 @@
 layout: default
 ---
 <header class="hero">
-	<div class="wrapper wrapperr--fullwidth">
+	<div class="wrapper wrapper--wide">
 		<div class="hero__text">
 			<h1>Velkommen til Pengeskapsfabrikken, et nytt boligkvartal på Carl Berner!</h1>
 			<a href="#melddin" class="btn">Meld din interesse!</a>
@@ -95,30 +95,106 @@ layout: default
 </section>
 
 
-<section class="persons">
+<section class="mapblock">
 	<div class="wrapper wrapper--fullwidth">
-		<div class="persons__streetview">
-			<img src="img/streetview.jpg" alt="">
+		<div class="mapblock__streetview">
+			<img src="img/streetview_crop.jpg" alt="">
 		</div>
-		<div class="persons__members">
-			<div class="member">
-				<span class="member__name">Christian Fr. Foss</span>
-				<span class="member__title">Prosjektmegler</span>
-				<span class="member__tel">T: <a href="tel:90 17 35 34">90 17 35 34</a></span>
-				<span class="member__email">E: <a href="mailto:cff@eiendomsmegler1.no">cff@eiendomsmegler1.no</a></span>
-			</div>
-			<div class="member">
-				<span class="member__name">Olav Aune</span>
-				<span class="member__title">Eiendomsmegler</span>
-				<span class="member__tel">T: <a href="tel:41 65 02 70">41 65 02 70</a></span>   
-				<span class="member__email">E: <a href="mailto:oa@eiendomsmegler1.no">oa@eiendomsmegler1.no</a></span>
-			</div>
-			<div class="member">
-				<span class="member__name">Svein Gundersen</span>
-				<span class="member__title">Eiendomsmegler</span>
-				<span class="member__tel">T: <a href="tel:48 09 96 80">48 09 96 80</a></span>
-				<span class="member__email">E: <a href="mailto:sg@eiendomsmegler1.no">sg@eiendomsmegler1.no</a></span>
-			</div>
-		</div>
+    <div class="mapblock__map">
+      <div id="map-canvas"></div>
+    </div>
 	</div>
 </section>
+
+
+
+<aside id="contactblock" class="contactblock">
+	<div class="wrapper wrapper--normal">
+
+	<h2 class="contactblock__title cirkas">Kontakt</h2>
+  <hr>
+
+    <div class="contactblock__form">
+      <h3 class="form__title">Meld din interesse</h2>
+      <form action="#contacresponse" class="contactform" method="post">
+        <div class="formitem">
+          <input required placeholder="ditt navn (obligatorisk)" type="text" id="form__name" name="form__name">
+          <label for="form__name">navn</label>
+        </div>
+        <div class="formitem">
+          <input required placeholder="e-post (obligatorisk)" type="email" id="form__email" name="form__email">
+          <label for="form__email">e-post</label>
+        </div>
+        <div class="formitem">
+          <input placeholder="telefonnummer" type="tel" id="form__tel" name="form__tel">
+          <label for="form__tel">telefonnummer</label>
+        </div>
+        <div class="formitem">
+          <textarea name="form__message" placeholder="melding" id="form__message" cols="30" rows="5"></textarea>
+          <label for="form__message">meldig</label>
+        </div>
+        <div class="formactions">
+          <input type="hidden" name="form__human" value="2">
+          <input type="hidden" name="submitted" value="1">
+          <input type="submit" class="submitbtn" value="Send">
+        </div>
+      </form>
+    </div>
+
+    <div class="contactblock__members">
+      <div class="member">
+        <span class="member__name">Christian Fr. Foss</span>
+        <span class="member__title">Prosjektmegler</span>
+        <span class="member__tel">T: <a href="tel:90 17 35 34">90 17 35 34</a></span>
+        <span class="member__email">E: <a href="mailto:cff@eiendomsmegler1.no">cff@eiendomsmegler1.no</a></span>
+      </div>
+      <div class="member">
+        <span class="member__name">Olav Aune</span>
+        <span class="member__title">Eiendomsmegler</span>
+        <span class="member__tel">T: <a href="tel:41 65 02 70">41 65 02 70</a></span>   
+        <span class="member__email">E: <a href="mailto:oa@eiendomsmegler1.no">oa@eiendomsmegler1.no</a></span>
+      </div>
+      <div class="member">
+        <span class="member__name">Svein Gundersen</span>
+        <span class="member__title">Eiendomsmegler</span>
+        <span class="member__tel">T: <a href="tel:48 09 96 80">48 09 96 80</a></span>
+        <span class="member__email">E: <a href="mailto:sg@eiendomsmegler1.no">sg@eiendomsmegler1.no</a></span>
+      </div>
+    </div>
+
+	</div>
+</aside>
+<script src="https://maps.googleapis.com/maps/api/js?v=3.exp"></script>
+<script>
+  var map;
+  
+  function initialize() {
+    var mapOptions = {
+      center: new google.maps.LatLng(47.505175, 19.054692),
+      zoom: 14,
+      zoomControl: false,
+      zoomControlOptions: {style: google.maps.ZoomControlStyle.DEFAULT,},
+      disableDoubleClickZoom: true,
+      mapTypeControl: true,
+      mapTypeControlOptions: {style: google.maps.MapTypeControlStyle.DROPDOWN_MENU,},
+      scaleControl: true,
+      scrollwheel: true,
+      streetViewControl: true,
+      draggable: true,
+      overviewMapControl: true,
+      overviewMapControlOptions: {opened: false,},
+      mapTypeId: google.maps.MapTypeId.ROADMAP,
+      styles: [{featureType: "landscape",stylers: [{saturation: -100}, {lightness: 65}, {visibility: "on"}]}, {featureType: "poi",stylers: [{saturation: -100}, {lightness: 51}, {visibility: "simplified"}]}, {featureType: "road.highway",stylers: [{saturation: -100}, {visibility: "simplified"}]}, {featureType: "road.arterial",stylers: [{saturation: -100}, {lightness: 30}, {visibility: "on"}]}, {featureType: "road.local",stylers: [{saturation: -100}, {lightness: 40}, {visibility: "on"}]}, {featureType: "transit",stylers: [{saturation: -100}, {visibility: "simplified"}]}, {featureType: "administrative.province",stylers: [{visibility: "off"}]/** /},{featureType: "administrative.locality",stylers: [{ visibility: "off" }]},{featureType: "administrative.neighborhood",stylers: [{ visibility: "on" }]/**/}, {featureType: "water",elementType: "labels",stylers: [{visibility: "on"}, {lightness: -25}, {saturation: -100}]}, {featureType: "water",elementType: "geometry",stylers: [{hue: "#ffff00"}, {lightness: -25}, {saturation: -97}]}],
+    }
+
+    map = new google.maps.Map(document.getElementById('map-canvas'), mapOptions);
+    var myLatLng = new google.maps.LatLng(47.505175, 19.054692);
+    var officeMarker = new google.maps.Marker({
+      position: myLatLng,
+      map: map,
+      //icon: image,
+      animation: google.maps.Animation.DROP,
+    });
+  }
+  google.maps.event.addDomListener(window, 'load', initialize);
+</script>

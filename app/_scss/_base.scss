@@ -40,13 +40,19 @@ a {
 	@include clearfix();
 	position: relative;
 	margin:0 auto;
-	padding:0 0.5em;
+	padding:0 1em;
 	max-width: $normalmax;
-	@include bp($s2) {
+	@include bp($s1) {
 		padding:0 1em;
 	}
-	@include bp($s4) {
+	@include bp($s2) {
 		padding:0 2em;
+	}
+	@include bp($s3) {
+		padding:0 3em;
+	}
+	@include bp($s4) {
+		padding:0 4em;
 	}
 }
 
@@ -72,8 +78,24 @@ a {
 
 hr {
 	border:none;
-	height:2px;
-	background-color: $white;
+	height:1px;
+	width:100%;
+	display:block;
+	border:none;
+	background-color: $pridark;
+	position:relative;
+	&:before {
+		content: '';
+		position: absolute;
+		display: block;
+		top:-2px;
+		left:.333em;
+		bottom:-2px;
+		right:.333em;
+		border-top: 1px solid $pridark;
+		border-bottom: 1px solid $pridark;
+		//background-color: red;
+	}
 }
 
 .btn {
@@ -85,6 +107,7 @@ hr {
 	background-color: $highlight;
 	color:$seclight;
 	text-decoration: none;
+	border:none;
 	&:hover, &:focus {
 		background-color: $pridark;
 		color:$prilight;
