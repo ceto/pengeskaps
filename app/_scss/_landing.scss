@@ -7,7 +7,7 @@
 	@include bp($s5){
 	padding:15em 0 12em;
 	// 	background-position: left bottom;
-	// 	background-size: $s5 auto;
+		background-size: cover;
 	}
 	.wrapper {
 
@@ -77,15 +77,18 @@
 	//background-color: red;
 	margin:0 auto;
 	@include bp($s2) {
-		margin:-2em 0 0;
+		margin:-2.75em 0 0;
 		display: inline-block;
-		width:33.333%;
+		width:20%;
 		position: absolute;
 		top:50%;
 		left:50%;
 		transform:translateY(-50%) translateX(-50%);
 	}
 	@include bp($s3) {
+		width:27%;
+	}
+	@include bp($s4) {
 		height:4em;
 		width:11em;
 	}
@@ -96,7 +99,47 @@
 	width:50%;
 	@include bp($s2) {
 		width:33.333%;
+
+		.tricky__elem {
+			clear:both;
+			float:right;
+			&:after {
+				left:110%;
+			}
+			&:nth-child(2) {
+				float:left;
+				.tricky__elem__min {
+					right:-8em;
+					top:-.75em;
+				}
+			}
+
+			&:first-child {
+				&:after{
+					transform:rotate(45deg);
+					transform-origin: top left;
+				}
+				.tricky__elem__min {
+					right:-9.5em;
+					top:3em;
+				}
+			}
+			&:last-child{
+				&:after{
+					transform:rotate(-45deg);
+					transform-origin: top left;
+				}
+				.tricky__elem__min {
+					right:-9.5em;
+					top:-3em;
+				}
+			}
+		}
 	}
+
+
+
+
 }
 
 .tricky__right {
@@ -104,12 +147,78 @@
 	width:50%;
 	@include bp($s2) {
 		width:33.333%;
+		
+
+
+		.tricky__elem {
+			clear:both;
+			float:left;
+			&:after {
+				right:110%;
+			}
+			&:nth-child(2) {
+				float:right;
+				.tricky__elem__min {
+					left:-8em;
+					top:-.75em;
+				}
+			}
+
+			&:first-child {
+				&:after{
+					transform:rotate(-45deg);
+					transform-origin: top right;
+				}
+				.tricky__elem__min {
+					left:-9em;
+					top:3em;
+				}
+			}
+			&:last-child {
+				&:after {
+					transform:rotate(45deg);
+					transform-origin: top right;
+				}
+				.tricky__elem__min {
+					left:-9em;
+					top:-3em;
+				}
+			}
+
+		}
+
 	}
+
+
+
+
+
 }
 .tricky__elem {
+	position: relative;
 	text-align: center;
 	font-family: $sans-serif;
 	margin:3em 0;
+	
+	@include bp($s2) {
+		margin:3em 0;
+		&:after {
+			position: absolute;
+			content: '';
+			display: block;
+			height:1px;
+			background-color: $pridark;
+			width:7em;
+			top:1.125em;
+		}
+	}
+
+	@include bp($s3) {
+		&:after {
+			width:8em;
+		}
+	}
+
 }
 
 .tricky__elem__title {
@@ -141,7 +250,7 @@
 .tricky__elem__list {
 	font-weight: 300;
 	list-style-type: none;
-	margin:.666em 0 .25em;
+	margin:.666em 0 0;
 	padding:0;
 	li {
 		font-size: .875em;
@@ -152,6 +261,14 @@
 	font-weight: 300;
 	font-size: .75em;
 	line-height: 1;
+	border-top:1px solid $pridark;
+	display: inline-block;
+	padding-top: .5em;
+	@include bp($s2) {
+		padding-top: 0;
+		border-top:none;
+		position: absolute;
+	}
 }
 
 .mapblock {
@@ -282,10 +399,11 @@
 .contactblock {
 	text-align: center;
 	padding:6em 0 4em;
-	hr {
-		visibility: hidden;
-		opacity: 0;
-	}
+	
+}
+
+.fogo {
+	@include clearfix();
 }
 .contactblock__title {
 	font-family: $sans-serif;
@@ -348,6 +466,7 @@
 
 
 }
+
 input[type="text"], input[type="email"], input[type="tel"], textarea {
 	font-family: $sans-serif;
 	font-size: 1em;
@@ -461,5 +580,20 @@ textarea {
   }
 }
 
+.form__response {
+	text-align: left;
+	max-width:75%;	
+	float:left;
+	font-size: .875em;
+	font-weight: 300;
+	line-height: 1;
+	display: inline-block;
+	&.error {
+		color:$highlight;
+	}
+	&.success {
+	}
+
+}
 
 
