@@ -29,7 +29,7 @@
         }
 
         // Set the recipient email address.
-        $recipient = "szabogabi@gmail.com";
+        $recipient = "cff@eiendomsmegler1.no";
 
         // Set the email subject.
         $subject = "New contact from $name";
