@@ -31,9 +31,12 @@
 				background-position: center center;
 				background-size: 100% auto;
 				display: inline-block;
-				height:7.666em;
-				width:20em;
-				//background-color: red;
+				height:6.666em;
+				width:16em;
+				@include bp($s2) {
+					height:7.666em;
+					width:20em;
+				}
 			}
 		}
 

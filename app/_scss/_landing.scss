@@ -1,14 +1,15 @@
 .hero {
 	padding:13em 0 9em;
-	background-image: url('../img/canga.jpg');
+	background-image: url('../img/homehero_med.jpg');
 	background-position: center bottom;
-	background-size: 100% auto;
+	background-size: cover;
 	background-repeat: no-repeat;
 	@include bp($s5){
-	padding:15em 0 12em;
-	// 	background-position: left bottom;
-		background-size: cover;
+		padding:15em 0 12em;
+		background-image: url('../img/homehero.jpg');
 	}
+	
+
 	.wrapper {
 
 	}
@@ -22,6 +23,7 @@
 		font-family: $sans-serif;
 		font-weight: 300;
 		font-size: 2em;
+		text-shadow:0 0 2px rgba(#fff,.5);
 	}
 
 }
@@ -47,9 +49,15 @@
 		background-position: center center;
 		background-size: 100% auto;
 		display: inline-block;
-		height:1.125em;
-		width:14em;
-		//background-color: red;
+		height:1em;
+		width:11em;
+		
+
+
+		@include bp($s5) {
+			height:1.125em;
+			width:14em;
+		}
 	}
 }
 
@@ -73,7 +81,7 @@
 	background-size: 100% auto;
 	display: block;
 	height:4em;
-	width:11em;
+	width:11.25em;
 	//background-color: red;
 	margin:0 auto;
 	@include bp($s2) {
