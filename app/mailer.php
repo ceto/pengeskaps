@@ -14,7 +14,7 @@
 
         // Check that data was sent to the mailer.
 
-        if ( empty($name) OR empty($message) ) {
+        if ( empty($name) OR empty($email) ) {
             // Set a 400 (bad request) response code and exit.
             http_response_code(400);
             echo "Oops! Name and email are required!";
@@ -32,7 +32,10 @@
         $recipient = "cff@eiendomsmegler1.no";
 
         // Set the email subject.
-        $subject = "New contact from $name";
+        $subject = "Pengeskapsfabrikken contact from $name";
+        
+        $subject2 = "Takk for din henvendelse.";
+        $email_content2="Du er nå registrert som interessent i boligprosjektet Pengeskapsfabrikken.\nVi jobber nå med utarbeidelse av hjemmeside og prospekt.\nSom registrert interessent holder vi deg fortløpende orientert om fremdriften.";
 
         // Build the email content.
         $email_content = "Name: $name\n";
@@ -42,18 +45,23 @@
 
         // Build the email headers.
         $email_headers = "From: $name <$email>";
+        
+        $email_headers2  = "From: Christian Fr. Foss <$recipient>";
 
         // Send the email.
         if (mail($recipient, $subject, $email_content, $email_headers)) {
             // Set a 200 (okay) response code.
             http_response_code(200);
-            echo "Thank You! Your message has been sent.";
+            echo "Takk for din henvendelse.";
 
             $txt = "emails/data.txt"; 
             $fh = fopen($txt, 'a'); 
             $txt=date("F j, Y, g:i a").' | '.$name.' | '.$email.' | '.$tel.' | '.str_replace(array("\r","\n"),array(" "," "),$message).PHP_EOL; 
             fwrite($fh,$txt);
             fclose($fh);
+
+            //confirmation email
+            mail($email, $subject2, $email_content2, $email_headers2);
 
 
 
