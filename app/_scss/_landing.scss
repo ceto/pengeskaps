@@ -1,11 +1,14 @@
 .hero {
-	padding:13em 0 9em;
+	padding:10em 0 4em;
 	background-image: url('../img/homehero_med.jpg');
 	background-position: center center;
 	background-size: cover;
 	background-repeat: no-repeat;
+	@include bp($s2) {
+		padding:16em 0 9em;
+	}
 	@include bp($s5){
-		padding:15em 0 12em;
+		padding:19em 0 12em;
 		background-image: url('../img/homehero.jpg');
 	}
 	
@@ -18,12 +21,32 @@
 
 .hero__text {
 	text-align: left;
-	max-width: 35em;
+	max-width: 16em;
+	padding-left: .25em;
+	font-size: 1.75em;
+	line-height: 1.5;
+
+	@include bp($s2) {
+		font-size: 2.25em;
+	}
+
 	h1 {
+		font-size:1em;
+		display: inline;
+
+		background-color: rgba($pridark,.5);
 		font-family: $sans-serif;
 		font-weight: 300;
-		font-size: 2em;
-		text-shadow:0 0 2px rgba(#fff,.5);
+		padding: .25em 0 .125em 0;
+		//text-shadow:0 0 2px rgba(#000,.5);
+		box-shadow: -.25em 0 0 0 rgba($pridark,.5) ,.25em 0 0 0 rgba($pridark,.5);
+		color:#fff;
+	}
+
+	.btn {
+		margin-top: .5em;
+		margin-left: -.333em;
+		font-size: .75em;
 	}
 
 }
