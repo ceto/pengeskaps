@@ -30,23 +30,28 @@
 
         // Set the recipient email address.
         $recipient = "cff@eiendomsmegler1.no";
+        //$recipient = "szabogabi@gmail.com";
 
         // Set the email subject.
-        $subject = "Pengeskapsfabrikken contact from $name";
+        $subject = 'Pengeskapsfabrikken contact from '.$name;
         
-        $subject2 = "Takk for din henvendelse.";
-        $email_content2="Du er nå registrert som interessent i boligprosjektet Pengeskapsfabrikken.\nVi jobber nå med utarbeidelse av hjemmeside og prospekt.\nSom registrert interessent holder vi deg fortløpende orientert om fremdriften.";
+        $subject2 = 'Takk for din henvendelse.';
+        $email_content2='Du er nå registrert som interessent i boligprosjektet Pengeskapsfabrikken.'."\r\n".'Vi jobber nå med utarbeidelse av hjemmeside og prospekt.'."\r\n".'Som registrert interessent holder vi deg fortløpende orientert om fremdriften.';
 
         // Build the email content.
-        $email_content = "Name: $name\n";
-        $email_content .= "Email: $email\n\n";
-        $email_content .= "Tel: $tel\n\n";
-        $email_content .= "Message:\n$message\n";
+        $email_content = 'Name: '.$name."\r\n";
+        $email_content .= 'Email: '.$email."\r\n";
+        $email_content .= 'Tel: '.$tel."\r\n";
+        $email_content .= 'Message:'."\r\n".$message."\r\n";
 
         // Build the email headers.
-        $email_headers = "From: $name <$email>";
         
-        $email_headers2  = "From: Christian Fr. Foss <$recipient>";
+        $htmlheaders  = 'MIME-Version: 1.0' . "\r\n";
+        $htmlheaders .= 'Content-type: text/plain; charset=utf-8' . "\r\n";
+
+        $email_headers = $htmlheaders. 'From: '.$name.' <'.$email.'>'. "\r\n";
+            
+        $email_headers2  = $htmlheaders. 'From: Christian Fr. Foss <'.$recipient.'>'. "\r\n";
 
         // Send the email.
         if (mail($recipient, $subject, $email_content, $email_headers)) {
