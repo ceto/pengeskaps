@@ -20,8 +20,9 @@ body {
 	overflow-x:hidden;
 	background-color: $white;
 	color:$pridark;
-	font-family: $serif;
+	font-family: $sans-serif;
 	font-size: 16px;
+	font-weight: 300;
 	line-height: 1.25;
 	@include bp($s3){
 		font-size: 18px;
@@ -113,3 +114,68 @@ hr {
 		color:$prilight;
 	}
 }
+
+
+
+
+
+.cirkas {
+	position: relative;
+	display: inline-block;
+	border-top: 1px solid $pridark;
+	padding:.125em 2em 0;
+	&:before {
+		z-index:-1;
+		position: absolute;
+		content:'';
+		display: block;
+		height:2em;
+		left:3px;
+		right:3px;
+		top:calc(-2em - 2px);
+		//background-color: red;
+		background-image: url('../img/cirka.png');
+		background-position: center bottom;
+		background-size: calc(100% - 3em) auto;
+		background-repeat: no-repeat;
+		border-bottom: 1px solid $pridark;
+	}
+}
+
+
+.lineas {
+	position: relative;
+	display: inline-block;
+	border-bottom: 1px solid currentColor;
+	&:before {
+		content:'';
+		position: absolute;
+		display: block;
+		color:inherit;
+		left:.25em;
+		right:.25em;
+		bottom:-4px;
+		border-bottom: 1px solid currentColor;
+
+	}
+
+}
+
+
+.content__text {
+	h3 {
+		text-transform: uppercase;
+		font-size: 1.125em;
+	}
+
+}
+
+ul {
+	list-style-type: none;
+	padding:0;
+	margin:2em 0;
+	li {
+		margin:.5em 0;
+	}
+}
+

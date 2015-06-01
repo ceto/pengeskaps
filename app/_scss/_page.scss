@@ -1,0 +1,58 @@
+.pagehero {
+	text-align: center;
+	background-repeat: no-repeat;
+	background-size: cover;
+	background-position: center center;
+
+	.wrapper {
+		height: 66.666vh;		
+		@include bp($s2) {
+			height: 75vh;
+			min-height: 25em;
+			max-height: 36em;
+		}
+	}
+
+	.pagehero__more {
+		position: absolute;
+		bottom:1em;
+
+	}
+}
+
+.subcontent {
+	text-align: center;
+	padding:0 0 4em;
+}
+
+.subcontent__hero {
+	img {
+		display: block;
+		margin:0 auto;
+	}
+}
+
+.subcontent__title {
+	font-weight: normal;
+	font-family: $scifly;
+	color:$highlight;
+	margin-top: 3em;
+	margin-bottom: 1.5em;
+	font-size: 2em;
+	text-transform: uppercase;
+}
+
+.subcontent__lead {
+	font-weight: 900;
+	color:$highlight;
+	margin-bottom: 2em;
+}
+
+.subcontent__text {
+	h3 {
+		font-size: 1em;
+		margin-top: 3em;
+		color:$highlight;
+	}
+
+}

@@ -1,9 +1,16 @@
-<header id="navrow" class="navrow">
-	<div class="wrapper wrapper--wide">
-		<nav class="nav nav--main">
-			<ul>
-				<li class="navrow__brand"><a href="#">Pengeskapsfabrikken</a></li>
+<input type="checkbox" id="nav-toggle">
+<header class="navbar"  role="banner">
+  <div class="wrapper wrapper--wide">
+    <a class="navbar__brand" href="index.html">Pengeskapsfabrikken</a>
+    <nav class="navbar__nav" role="navigation">
+      <ul id="menu-primary-navigation" class="nav navbar__ul">
+      	<li class="menu-om-prosjektet"><a href="prosjektet.html">Om Prosjektet</a></li>
+				<li class="menu-finn-din-bolig"><a href="#">Finn Din Bolig</a></li>
+				<li class="menu-prisliste"><a href="#">Prisliste</a></li>
+				<li class="current menu-bilder active"><a href="#">Bilder</a></li>
+				<li class="current menu-beliggenhet"><a href="#">Beliggenhet</a></li>
 			</ul>
 		</nav>
-	</div>
+		<label class="nav-toggle" for="nav-toggle"><i class="ion ion-navicon"></i>MENU</label>
+  </div>
 </header>
