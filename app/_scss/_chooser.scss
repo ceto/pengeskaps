@@ -1,0 +1,115 @@
+.thechooser{
+}
+
+.visualchooser {
+	//height:75vh;
+	position:relative;
+	width:100%;
+	backface-visibility: hidden;
+
+	background-color: $pridark;
+	background-repeat: no-repeat;
+	background-size: 100% auto;
+	background-position: top center;
+	
+	&.visualchooser{
+		background-image: url('../img/building_front.jpg');
+		@include bp($s2) {
+			background-image: url('../img/building_front.jpg');
+		}
+		@include bp($s3) {
+			background-image: url('../img/building_front.jpg');
+		}
+		@include bp($s4) {
+			background-image: url('../img/building_front.jpg');
+		}
+		@include bp($s5) {
+			background-image: url('../img/building_front.jpg');
+		}
+	}
+
+	svg,img {
+		display: block;
+	}
+
+	.btn{
+		font-size: 1em;
+		right:12px;
+		bottom:24px;
+		position: absolute;
+		right:6px;
+		bottom: 12px;
+		@include bp($s2) {
+			right:24px;
+			bottom: 24px;
+		}
+		@include bp($s3) {
+			right:36px;
+			bottom: 24px;
+		}
+		@include bp($s5) {
+			right:48px;
+			bottom: 36px;
+		}
+	}
+
+}
+
+.chooser__head {
+	text-align: center;
+}
+
+
+
+/****************** Data Table Styles **************/
+.datatable {
+	margin:2em 0 4em 0;
+	display:table;
+	//border-collapse:collapse;
+	border-collapse: separate;
+	border-spacing:0 .75em;
+	width:100%;
+	font-family:$sans-serif;
+	font-size:.875em;
+	line-height:1;
+	//overflow:hidden;
+	@include bp($s2){
+		font-size:1em;
+	}
+}
+
+.datarow{
+	display:table-row-group;
+	&.datatable--head{
+		display: table-row;
+		.datarow--cell{
+			font-weight: 400; 
+			padding:.75em 0.666em;
+		}
+	}
+}
+
+
+.datarow--link {
+	display:table-row;
+	color:#000;
+	transition:background-color .4s ease;
+	&.active, &:hover, &:focus {
+		outline:1px solid $highlight;
+		text-decoration: none;
+	}
+
+}
+
+.datarow--cell {
+	position: relative;
+	display:table-cell;
+	padding:.25em 0.125em .125em;
+	text-align:center;
+	vertical-align: middle;
+
+	@include bp($s2){
+		padding:.5em 0.666em .333em;
+	}
+}
+

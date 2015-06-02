@@ -41,17 +41,24 @@
 }
 
 .contactblock {
-	text-align: center;
-	padding:4em 0 4em;
-	background-image: url('../img/bg_grunge.jpg');
+	text-align: center;	
+	background-image: url('../img/bg_grunge50.jpg');
 	background-position: center center;
 	background-repeat: no-repeat;
 	background-size: cover;
-	
+	overflow: hidden;
+	.single--apartment & {
+		background-image: none;
+		height:0;
+	}
+	// .finndinbolig & {
+	// 	display: none;
+	// }
 }
 
 .fogo {
 	@include clearfix();
+	padding:4em 0;
 }
 
 .contactblock__members {
@@ -219,7 +226,10 @@ textarea {
 }
 
 
-
+.cf_footer {
+	@include clearfix();
+	clear:both;
+}
 
 .cf_footer__brands {
 	padding:2em 0 2em 0;

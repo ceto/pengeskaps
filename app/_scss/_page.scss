@@ -1,3 +1,32 @@
+.fele {
+	@include clearfix();
+	margin:0 auto;
+	max-width:600px;
+	@include bp($s3) {
+		@include clearfix();
+		width:47%;
+	}
+}
+
+.fele--bal {
+	@include bp($s3) {
+		float:left;
+		margin-right: 1.5%;
+	}
+}
+
+.fele--jobb {
+	@include bp($s3) {
+		float:right;
+		margin-left: 1.5%;
+	}
+}
+
+.fele--overlay {
+	padding:1.5em;
+	background-color: rgba(#fff,.7);
+}
+
 .pagehero {
 	text-align: center;
 	background-repeat: no-repeat;
@@ -37,18 +66,20 @@
 	font-family: $scifly;
 	color:$highlight;
 	margin-top: 3em;
-	margin-bottom: 1.5em;
+	margin-bottom: 1em;
 	font-size: 2em;
 	text-transform: uppercase;
 }
 
 .subcontent__lead {
-	font-weight: 900;
+	font-weight: 700;
 	color:$highlight;
 	margin-bottom: 2em;
 }
 
 .subcontent__text {
+	text-align: left;
+	//font-size: .875em;
 	h3 {
 		font-size: 1em;
 		margin-top: 3em;
